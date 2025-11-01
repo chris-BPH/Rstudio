@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="quarto-1.6.42">
+  <meta name="author" content="Christopher">
+  <title>Importation de données - Code R</title>
+
+  <!-- Styles Quarto -->
+  <link href="Importation_de_donnees_code_files/bootstrap.min.css" rel="stylesheet">
+  <link href="Importation_de_donnees_code_files/bootstrap-icons.css" rel="stylesheet">
+  <link href="Importation_de_donnees_code_files/tippy.css" rel="stylesheet">
+  <link href="Importation_de_donnees_code_files/quarto-syntax-highlighting.css" rel="stylesheet">
+
+  <style>
+    code { white-space: pre-wrap; }
+    span.smallcaps { font-variant: small-caps; }
+    ul.task-list { list-style: none; }
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body class="quarto-light">
+  <main class="content">
+    <header class="quarto-title-block">
+      <h1>Importation de données en R</h1>
+      <p><strong>Auteur :</strong> Christopher</p>
+    </header>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Sur cette page web, je vais vous montrer comment importer des données en utilisant du code R, 
+        afin d’éviter les erreurs d’importation et de ne pas avoir à réimporter les fichiers à chaque redémarrage de R 
+        (particulièrement pratique lors des examens ou des stages).
+      </p>
+    </section>
+
+    <section>
+      <h2>1. Première étape : localiser le fichier</h2>
+      <p>
+        Ouvre RStudio et crée un nouveau script. Nous allons utiliser une fonction native de R pour importer les données : 
+        <code>read.table()</code>.
+      </p>
+      <p>Ensuite, localise ton fichier à importer et copie son chemin d’accès :</p>
+      <img src="images/clipboard-1034712759.png" alt="Capture d’écran chemin fichier" class="img-fluid">
+
+      <p>
+        Exemple : <code>C:\TUTORAT\hta.txt</code>.  
+        L’extension <code>.txt</code> indique qu’il s’agit d’un fichier texte.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. La fonction <code>read.table()</code></h2>
+      <img src="images/clipboard-2171574876.png" alt="read.table" class="img-fluid">
+
+      <p>
+        Dans <code>file</code>, place le chemin d’accès copié précédemment.  
+        ⚠️ Attention : R ne comprend pas les <code>\</code>, il faut les doubler : <code>\\</code>.
+      </p>
+      <img src="images/clipboard-838646137.png" alt="Exemple file" class="img-fluid">
+
+      <p>
+        Le paramètre <code>header</code> indique si la première ligne du fichier contient les noms de colonnes.  
+        Utilise <code>TRUE</code> ou <code>FALSE</code>.
+      </p>
+      <img src="images/clipboard-1347458565.png" alt="header TRUE" class="img-fluid">
+
+      <p>
+        Le paramètre <code>sep</code> précise le séparateur de colonnes :
+      </p>
+
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>Format du fichier</th>
+            <th>sep =</th>
+            <th>Commentaires</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CSV</td><td><code>","</code></td><td>Colonnes séparées par des virgules</td></tr>
+          <tr><td>Excel (xls)</td><td><code>";"</code></td><td>Colonnes séparées par des points-virgules</td></tr>
+          <tr><td>Texte</td><td><code>"\t"</code> ou <code>" "</code></td><td>Tabulations ou espaces</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Pour savoir lequel utiliser, ouvre ton fichier texte : si la sélection bleue s’étend jusqu’à la variable suivante,
+        c’est une tabulation ; sinon ce sont des espaces.
+      </p>
+
+      <img src="images/clipboard-3251194478.png" alt="tabulation exemple" class="img-fluid">
+
+      <p>Le paramètre <code>dec</code> indique le séparateur de décimales (<code>.</code> ou <code>,</code>).</p>
+      <img src="images/clipboard-2518845352.png" alt="Séparateur décimal exemple" class="img-fluid">
+
+      <!-- IMAGE MANQUANTE RÉINTÉGRÉE -->
+      <div class="quarto-figure quarto-figure-center">
+        <figure class="figure">
+          <img src="images/clipboard-223405169.png" alt="Exemple affichage des décimales" class="img-fluid figure-img">
+          <figcaption>Résultat final des 4 paramètres de la fonction d'importation.</figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>3. Vérification de l’importation</h2>
+      <p>
+        Une fois les paramètres renseignés, exécute ton code (<code>Ctrl + Entrée</code>) et vérifie avec 
+        <code>head()</code> ou <code>str()</code>.
+      </p>
+      <img src="images/clipboard-970137174.png" alt="résultat importation" class="img-fluid">
+      <p><strong style="color:blue;">Importation réussie </strong></p>
+    </section>
+
+    <footer class="text-center mt-4">
+      <p><strong>Merci d’avoir lu cette page !</strong> J’espère qu’elle vous aura été utile.</p>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="Importation_de_donnees_code_files/bootstrap.min.js"></script>
+  <script src="Importation_de_donnees_code_files/popper.min.js"></script>
+  <script src="Importation_de_donnees_code_files/tippy.umd.min.js"></script>
+</body>
+</html>
