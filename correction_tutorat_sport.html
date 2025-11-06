@@ -5334,8 +5334,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
-
+<script>
+  const password = "biostat2025"; 
+  const userPassword = prompt("Veuillez entrer le mot de passe pour accéder à cette page :");
+  if (userPassword !== password) {
+    alert("Mot de passe incorrect !");
+    window.location.href = "https://www.google.com"; // ou une autre page
+  }
+</script>
 
 
 </body></html>
