@@ -3,6 +3,18 @@
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
+  <script>
+  // Mot de passe à modifier selon ton choix
+  const password = "tutorat12nov"; 
+
+  // Demande du mot de passe dès l’ouverture
+  const userPassword = prompt("Veuillez entrer le mot de passe pour accéder à cette page :");
+
+  if (userPassword !== password) {
+    alert("Mot de passe incorrect !");
+    window.location.href = "https://www.google.com"; // redirection si mauvais mot de passe
+  }
+</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -3658,6 +3670,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
