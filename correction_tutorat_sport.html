@@ -5326,6 +5326,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
+<script>
+    // Attention : ne pas stocker de mots de passe sensibles côté client en clair !
+    const PASSWORD = "tutorat12nov";
+    const input = document.getElementById("pw");
+    const btn = document.getElementById("ok");
+    const msg = document.getElementById("msg");
+
+    btn.addEventListener("click", function () {
+      const user = input.value;
+      if (user === PASSWORD) {
+        // accès autorisé
+        alert("Mot de passe correct — accès autorisé");
+        // par exemple afficher le contenu ou rediriger :
+        // window.location.href = "page_protégée.html";
+      } else {
+        // accès refusé
+        msg.textContent = "Mot de passe incorrect !";
+        // redirection optionnelle :
+        // window.location.href = "https://www.google.com";
+      }
+    });
+
+    // Permet valider avec Enter
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") btn.click();
+    });
+  </script>
 
 
 
