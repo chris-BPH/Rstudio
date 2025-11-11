@@ -3149,7 +3149,7 @@ vertical-align: -.125em;
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sport <span class="ot">&lt;-</span> sport <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SCORE_SANTE_CLASSE  =</span> <span class="fu">cut</span>(SCORE_SANTE, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>), <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">right =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>include.lowest</code> sert à inclure la valeur minimale dans la première classe de ton découpage. Même si la valeur minimal ici est 55.4.</p>
+<p><code>include.lowest</code> sert à inclure la valeur minimale dans la première classe de ton découpage. Même si la valeur minimal ici est 10.</p>
 <p><code>right</code> permet de savoir si l’on veut un intervalle fermé à droite/gauche.</p>
 <p>Table vérif :</p>
 <div class="cell">
@@ -5335,5 +5335,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 
 </body></html>
+
 
 
